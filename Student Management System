@@ -1,0 +1,57 @@
+class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() { 
+        return name; 
+    }
+    public int getAge() { 
+        return age; 
+    }
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+class Student extends Person {
+    private String branch;
+    private double cgpa;
+    public Student(String name, int age, String branch, double cgpa) {
+        super(name, age);
+        this.branch = branch;
+        this.cgpa = cgpa;
+    }
+    public void displayInfo() {
+        System.out.println("Student Details:");
+        System.out.println("Name: " + getName());
+        System.out.println("Age: " + getAge());
+        System.out.println("Branch: " + branch);
+        System.out.println("CGPA: " + cgpa);
+        System.out.println();
+    }
+}
+class Teacher extends Person {
+    private String subject;
+
+    public Teacher(String name, int age, String subject) {
+        super(name, age);
+        this.subject = subject;
+    }
+    public void displayInfo() {
+        System.out.println("Teacher Details:");
+        System.out.println("Name: " + getName());
+        System.out.println("Age: " + getAge());
+        System.out.println("Subject: " + subject);
+        System.out.println();
+    }
+}
+public class OOPDemo {
+    public static void main(String[] args) {
+        Person s = new Student("Lasya", 20, "CSE", 7.8);
+        Person t = new Teacher("Anil", 40, "Java");
+        s.displayInfo();
+        t.displayInfo();
+    }
+}
